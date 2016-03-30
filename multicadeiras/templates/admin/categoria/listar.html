@@ -1,0 +1,8 @@
+{% extends 'admin/index.html' %}
+{% block colunaPrincipal %}
+<h1>Categorias cadastradas</h1>
+{% for categoria in categorias %}
+	<p><label>{{ categoria.id }} : {{ categoria.nome }}</label> <a href="/admin/categoria/editar/{{ categoria.id }}">Editar</a> | <a href="/admin/categoria/remover/{{ categoria.id }}" onclick="return confirm('Remover categoria {{ categoria.nome }}?\n\nAVISO: Todos as Subcategorias e Produtos dentro desta Categoria serão removidos junto.');" >Remover</a></p>
+{% endfor %}
+
+{% endblock %}

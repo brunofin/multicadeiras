@@ -1,0 +1,44 @@
+{% extends 'admin/index.html' %}
+
+{% load staticfiles %}
+
+
+{% block colunaPrincipal %}
+<script src="{% static "js/jquery-1-7-1.min.js" %}"></script>
+<h1>Alterar Ordem do Menu</h1>
+<p>Arraste os itens da lista abaixo para alterar a ordem do menu de produtos.</p>
+<p>Quando estiver pronto, clique em Enviar.</p>
+
+<ul id="lista" class="sortable">
+	{% for categoria in categorias %}
+		<li><div id="{{ categoria.id }}" style="display: none;" ></div>:: {{ categoria.nome }}</li>
+	{% endfor %}
+</ul>
+<script src="{% static "js/jquery.sortable.js" %}"></script>
+<script>
+    $('.sortable').sortable();
+    
+    $('.sortable').sortable().bind('sortupdate', function() {
+    	var ordemInput = document.getElementById("id_ordem");
+    	var aux = "";
+    	var ul = document.getElementById("lista");
+    	var items = ul.getElementsByTagName("li");
+    	for (var i = 0; i < items.length; ++i) {
+    		var div = items[i].getElementsByTagName("div")[0];
+    	  if(i == items.length - 1) {
+    		  aux += div.id;
+    	  } else {
+    		  aux += div.id + ",";
+    	  }
+    	}
+    	ordemInput.value = aux;
+    });
+</script>
+
+<form action="." method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" />
+</form>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+<div class="produtoThumb">
+<div id="imagem">
+<img src="{{ MEDIA_URL}}{{ produto.imagem }}" alt="Imagem de {{ produto.nome }}" />
+</div>
+<div id="titulo">
+{{ produto.nome }}
+</div>
+<div id="botao">
+<a href="/produto/{{ produto.id }}" target="_blank" ><input type="button" value="Ver"/></a><a href="/admin/produto/editar/{{ produto.id }}" ><input type="button" value="Editar"/></a><a href="/admin/produto/remover/{{ produto.id }}" onclick="return confirm('Remover produto {{ produto.nome }}?');" ><input type="button" value="Remover"/></a>
+</div>
+</div>

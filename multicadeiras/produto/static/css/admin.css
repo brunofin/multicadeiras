@@ -1,0 +1,279 @@
+ul.menuEsquerda a {
+	color: white;
+}
+
+ul.menuEsquerda  a:visited {
+	color: whitesmoke;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+div#principal {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1050px;
+	height: 1150px;
+}
+
+div#header {
+	height: 100px;
+}
+
+div#corpo {
+	height: 100%;
+	overflow: overlay;
+	color: #2f2f2f;
+	background-color: rgba(180, 180, 180, 0.2);
+}
+
+div#footer {
+	height: 50px;
+	background-color: #CCCCCC;
+}
+
+div.header {
+	width: 100%;
+	float: left;
+}
+
+div#colunaEsquerda {
+	width: calc(22% -     1px);
+	height: inherit;
+	float: left;
+	border-right: 1px dotted #2F2419;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div#colunaPrincipal {
+	width: 75%;
+	height: inherit;
+	float: left;
+}
+
+div#colunaDireita {
+	width: calc(2% -     1px);
+	height: inherit;
+	float: left;
+	border-left: 1px dotted #2F2419;
+}
+
+.bloco {
+	min-height: 120px;
+	width: 90%;
+	border: 1px solid #FFFFFF;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 17px;
+	text-align: left;
+	border-radius: 10px;
+	background-color: #B6B6B6;
+}
+
+.bloco #conteudo {
+	color: whitesmoke;
+	margin-left: 8px;
+}
+
+.bloco #titulo {
+	width: 100%;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height: 30px;
+	padding-left: 16px;
+}
+
+ul.menuEsquerda {
+	list-style-image: none;
+	list-style-type: none;
+	text-transform: uppercase;
+}
+
+ul.menuEsquerda li {
+	text-align: left;
+	font-weight: bold;
+	border-bottom: 1px dotted grey;
+	margin-bottom: 5px;
+}
+
+ul.menuEsquerda li:before {
+	
+}
+
+ul.menuEsquerda ul {
+	list-style-image: none;
+	list-style-type: none;
+	margin-left: 20px;
+}
+
+ul.menuEsquerda ul li {
+	text-transform: none;
+	font-weight: normal;
+}
+
+ul.menuEsquerda ul li:before {
+	content: '› ';
+}
+
+.menuEsquerda li details p {
+	text-transform: none;
+	margin: 3px;
+	margin-left: 18px;
+}
+
+div.colunaPrincipal {
+	padding: 15px;
+	float: left;
+	color: white;
+}
+
+div.produtoThumb {
+	width: 170px;
+	height: 240px;
+	border: 1px solid black;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	display: inline-block;
+	float: left;
+	margin: 5px;
+}
+
+div.produtoThumb #imagem {
+	height: 175px;
+	width: 100%;
+	background-color: white;
+}
+
+div.produtoThumb img {
+	height: 175px;
+	width: 100%;
+}
+
+div.produtoThumb #titulo {
+	height: 35px;
+	width: 100%;
+	margin-top: 3px;
+	color: whitesmoke;
+}
+
+option.categoriaSelect {
+	font-weight: bold;
+}
+
+/* Início HTML5 Sortable List*/
+
+#features {
+	margin: auto;
+	width: 460px;
+	font-size: 0.9em;
+}
+
+.connected,.sortable,.exclude,.handles {
+	margin: 5px;
+	border: 1px solid rgb(173, 173, 173);
+	padding: 0;
+	width: 310px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.sortable.grid {
+	overflow: hidden;
+}
+
+.connected li,.sortable li,.exclude li,.handles li {
+	list-style: none;
+	border: 1px solid #CCC;
+	background: #F6F6F6;
+	font-family: 'Ubuntu', sans-serif;
+	color: #1C94C4;
+	margin: 5px;
+	padding: 5px;
+	height: 22px;
+}
+
+.handles span {
+	cursor: move;
+}
+
+li.disabled {
+	opacity: 0.5;
+}
+
+.sortable.grid li {
+	line-height: 80px;
+	float: left;
+	width: 80px;
+	height: 80px;
+	text-align: center;
+}
+
+li.highlight {
+	background: #FEE25F;
+}
+
+#connected {
+	width: 440px;
+	overflow: hidden;
+	margin: auto;
+}
+
+.connected {
+	float: left;
+	width: 200px;
+}
+
+.connected.no2 {
+	float: right;
+}
+
+li.sortable-placeholder {
+	border: 1px dashed #CCC;
+	background: none;
+}
+
+/* Fim HTML5 Sortable List */
+
+.resultadosBusca {
+	border: 1px solid silver;
+	border-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 39px;
+	width: 80%;
+}
+
+.resultadosBusca th {
+	background-color: rgb(175, 173, 173);
+	padding: 5px;
+}
+
+.resultadosBusca td {
+	border-bottom: 1px solid silver;
+}
+
+.quantidade {
+	text-align: center;
+}
+
+.termo {
+	text-align: left;
+}

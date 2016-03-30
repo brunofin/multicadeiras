@@ -1,0 +1,9 @@
+<a href="/produto/{{ produto.id }}" >
+	<div class="produtoThumb">
+		<div id="imagem" class="imgThumb" style="background-image: url('{{ MEDIA_URL }}{{ produto.imagem }}');" alt="Imagem de {{ produto.nome }}">
+		</div>
+		<div id="titulo">
+			<span>{{ produto.nome }}</span>
+		</div>
+	</div>
+</a>

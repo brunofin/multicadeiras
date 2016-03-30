@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<title>Login Administrativo</title>
+	<style type="text/css">
+		div#main {
+			margin-left: auto;
+			margin-right: auto;
+			width: 60%;
+			border-left: 1px solid silver;
+			border-right: 1px solid silver;
+			padding: 10px;
+		}
+	</style>
+	</head>
+	<body>
+		<div id="main">
+		<h2>Acesso restrito</h2>
+		{% if user.is_authenticated %}
+			<h4>Você já está logado no sistema</h4>
+			{% else %}
+		<h4>Entre com suas credenciais abaixo para continuar</h4>
+		{% endif %}
+			<div id="form">
+				<form method="post" action=".">
+					{% csrf_token %}
+					{{ form.as_p }}
+					<input type="submit" />
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

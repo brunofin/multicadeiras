@@ -1,0 +1,51 @@
+{% extends 'multicadeiras/index.html' %}
+
+{% block conteudo %}
+
+<h3>NOSSOS CLIENTES SÃO NOSSA REFERÊNCIA.</h3>
+
+<h5>Multicadeiras – transformando ambientes em cenários perfeitos para o seu negócio ou lazer.</h5>
+
+<p>Conceitos modernos surgem através de idéias inovadoras. 
+Assim surgiu em 1990 a Multicadeiras, oferecendo uma vasta linha de produtos para o segmento de Hotéis, Bares, Restaurantes e  Salões de Festas.</p>
+
+<p>A marca Multicadeiras é hoje referência em mesas, bancos e cadeiras para estes segmentos.</p>
+
+<p>Veja isto em nossa lista de clientes abaixo.</p>
+
+<p>Além disso, vem se destacando também pela nova opção de tampos em COMPENSADO NAVAL, conferindo ao produto um grande diferencial.</p>
+
+<p>Com muito empenho e dedicação, a Multicadeiras conquistou a confiança de seus clientes e o reconhecimento do mercado como uma empresa de referência também em estilo, sofisticação e bom gosto.</p>
+
+<p>Além da preocupação com a qualidade e o bom preço, os produtos oferecidos evoluem de acordo com as últimas tendências nacionais e internacionais.</p>
+
+<p>A Multicadeiras tem também grande preocupação em disponibilizar informações precisas aos seus clientes, procurando orientá-los o melhor possível quanto aos produtos, materiais, medidas, cores e características, fornecendo todos os elementos necessários para que possam tomar suas decisões de compra com o máximo de segurança, <strong><i>transformando ambientes em cenários perfeitos para o seu negócio ou lazer.</i></strong></p>
+
+<div class="listaClientes">
+<ul>
+{% for cat in clienteCat %}
+<li>
+	<h3>{{ cat.nome }}</h3>
+	<ul>
+	{% for cliente in clientes %}
+		{% if cliente.categoria.id == cat.id %}
+			<li>
+			{% if not cliente.website %}
+				<p>{{ cliente.nome }}</p>
+				{% else %}
+				<p><a href="{{ cliente.website }}" >{{ cliente.nome }}</a></p>
+			{% endif %}
+			</li>
+		{% endif %}
+		
+	{% endfor %}
+	</ul>
+	</li>
+{% endfor %}
+</ul>
+</div>
+
+<br>
+
+<p>E MUITOS OUTROS -  ALÉM DE INÚMEROS SALÕES DE FESTAS PARA  CONDOMÍNIOS DE EDIFÍCIOS RESIDENCIAIS E CLIENTES PESSOA FÍSICA.</p>
+{% endblock %}

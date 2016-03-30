@@ -1,0 +1,69 @@
+{% extends 'base.html' %} {% block css %} {% include 'admin/css.html' %}
+{% endblock %} {% block header %}
+<label>PAINEL ADMINISTRATIVO</label>
+<form method="GET" action='/admin/logout/'>
+	<input type="submit" value="Logout" />
+</form>
+{% endblock %}
+{% block colunaEsquerda %}
+
+<div class="bloco">
+	<label id="titulo">Opções</label>
+	<div id="conteudo">
+		<ul class="menuEsquerda">
+
+			<li><details>
+					<summary>Página inicial</summary>
+					<p><a href="/admin/menu/ordem">Alterar ordem do menu</a></p>
+					<p><a href="/admin/produto/destaques">Alterar produtos em destaque</a></p>
+				</details></li>
+				
+				<li><details>
+					<summary>Análise de Dados</summary>
+					<p><a href="/admin/busca">Resultados das Buscas</a></p>
+					<p><a href="/admin/relatorio">Relatórios de acessos</a></p>
+				</details></li>
+			
+			<li><details>
+					<summary>Clientes</summary>
+					<p><a href="/admin/clientes">Cadastro e Exclusão</a></p>
+					<p><a href="/admin/clientes/categorias">Categorias de Clientes</a></p>
+				</details></li>
+				
+			<li><details>
+					<summary>Categorias</summary>
+					<p><a href="/admin/categoria/cadastrar">Cadastrar</a></p>
+					<p><a href="/admin/categoria/listar">Listar</a></p>
+				</details></li>
+			
+			<li><details>
+					<summary>Subcategorias</summary>
+					<p><a href="/admin/subcategoria/cadastrar">Cadastrar</a></p>
+					<p><a href="/admin/subcategoria/listar">Listar</a></p>
+				</details></li>
+
+			<li><details>
+					<summary>Produtos</summary>
+					<p><a href="/admin/produto/cadastrar">Cadastrar</a></p>
+					<p><a href="/admin/produto/listar">Listar</a></p>
+				</details></li>
+
+			<li><details>
+					<summary>Slideshow</summary>
+					<p><a href="/admin/slideshow">Editar</a></p>
+				</details></li>
+			
+			<li><details>
+					<summary>Galeria de Fotos</summary>
+					<p><a href="/admin/galeria/cadastrar">Cadastrar foto</a></p>
+					<p><a href="/admin/galeria/listar">Listar galeria</a></p>
+				</details></li>
+
+			<li><details>
+					<summary>Administração</summary>
+					<p><a href="/admin/senha">Alterar senha</a></p>
+				</details></li>
+		</ul>
+	</div>
+</div>
+{% endblock %}{% block colunaPrincipal %}{% endblock %}

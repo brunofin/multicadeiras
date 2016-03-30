@@ -1,0 +1,11 @@
+{% extends 'admin/index.html' %}
+
+{% block colunaPrincipal %}
+
+<p>Houve um erro ao processar o formulário. O Formulário não é válido.</p>
+<p>Segue a lista de erros:</p>
+<div style="margin-left: 20px;">
+{{ errors }}
+</div>
+
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends 'admin/index.html' %}
+{% block colunaPrincipal %}
+<h1>Fotos cadastradas</h1>
+{% for foto in galeria %}
+	{% include 'admin/galeria/thumb.html' with foto=foto %}
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends 'multicadeiras/index.html' %}
+
+{% block conteudo %}
+{% for produto in produtos %}
+	{% include 'multicadeiras/produto/produtoThumb.html' with produto=produto %}
+{% endfor %}
+{% endblock %}

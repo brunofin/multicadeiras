@@ -1,0 +1,24 @@
+{% extends 'admin/index.html' %}
+{% block colunaPrincipal %}
+<h1>Resultados das buscas realisadas pelos clientes</h1>
+<p>Ordenado pelo termo mais buscado</p>
+
+
+<table class="resultadosBusca">
+	<tr>
+		<th>Quantidade</th>
+		<th>Termo buscado</th>
+	</tr>
+{% for termo in resultados %}
+	<tr>
+		<td class="quantidade">
+			<span>{{ termo.quantidade }}</span>
+		</td>
+		<td class="termo">
+			<span>{{ termo.termo }}</span>
+		</td>
+	</tr>	
+{% endfor %}
+</table>
+
+{% endblock %}

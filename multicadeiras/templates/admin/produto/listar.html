@@ -1,0 +1,8 @@
+{% extends 'admin/index.html' %}
+{% block colunaPrincipal %}
+<h1>Produtos cadastrados</h1>
+
+{% for produto in produtos %}
+	{% include 'admin/produto/produtoThumb.html' with produto=produto %}
+{% endfor %}
+{% endblock %}

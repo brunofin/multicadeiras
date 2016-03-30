@@ -1,0 +1,19 @@
+{% extends 'admin/index.html' %}
+{% block colunaPrincipal %}
+<h1>Subcategorias cadastradas</h1>
+
+<div class="categorias">
+{% for categoria in categorias %}
+<p><label id="titulo">{{ categoria.nome }}</label></p>
+
+<div id="subcategoria">
+{% for subcategoria in subcategorias %}
+{% if subcategoria.categoria.id == categoria.id %}
+	<p id="sub"><label>{{ subcategoria.nome }}</label> <a href="/admin/subcategoria/editar/{{ subcategoria.id }}">Editar</a> | <a href="/admin/subcategoria/remover/{{ subcategoria.id }}" onclick="return confirm('Remover categoria {{ categoria.nome }}?\n\nAVISO: Todos os Produtos dentro desta Subcategoria serão removidos junto.');" >Remover</a> | <a href="#">Ver produtos</a></p>
+{% endif %}
+{% endfor %}
+</div>
+{% endfor %}
+</div>
+
+{% endblock %}

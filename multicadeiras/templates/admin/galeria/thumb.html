@@ -1,0 +1,10 @@
+<div class="produtoThumb">
+<div id="imagem">
+<a href="{{ MEDIA_URL }}{{ foto.foto }}">
+<img src="{{ MEDIA_URL }}{{ foto.foto }}" />
+</a>
+</div>
+<div id="botao">
+<a href="/admin/galeria/editar/{{ foto.id }}" ><input type="button" value="Editar"/></a><a href="/admin/galeria/remover/{{ foto.id }}" onclick="return confirm('Remover imagem da galeria?');" ><input type="button" value="Remover"/></a>
+</div>
+</div>

@@ -1,0 +1,25 @@
+{% extends 'admin/index.html' %}
+
+{% block colunaPrincipal %}
+<h1>Cadastro de Produto</h1>
+<form enctype="multipart/form-data" action="." method="POST">
+{% csrf_token %}
+
+<p><label for="id_subcategoria">Subcategoria pertencente:</label>
+<select name="subcategoria" id="id_subcategoria">
+<option value="" selected="selected">---</option>
+{% for cat in categ %}
+<option class="categoriaSelect" value="">- {{ cat.nome }}</option>
+{% for subcat in subcateg %}
+{% if subcat.categoria.id == cat.id %}
+<option class="subcategoriaSelect" value="{{ subcat.id }}">     {{ subcat.nome }}</option>
+{% endif %}
+{% endfor %}
+{% endfor %}
+</select></p>
+
+{{ form.as_p }}
+<input type="submit" />
+</form>
+
+{% endblock %}

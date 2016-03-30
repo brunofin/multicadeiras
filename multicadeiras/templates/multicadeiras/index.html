@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block css %}
+{% include 'multicadeiras/css.html' %}
+{% endblock %}
+
+{% block header %}
+{% include 'facebook-js.html' %}
+{% include 'gplus-js.html' %}
+{% include 'multicadeiras/header.html' %}
+{% endblock %}
+
+{% block colunaEsquerda %}
+{% include 'multicadeiras/colunaEsquerda.html' %}
+{% endblock %}
+
+{% block colunaPrincipal %}
+{% include 'multicadeiras/busca.html' %}
+<div class="colunaPrincipal">
+	{% block conteudo %}
+	{% include 'multicadeiras/colunaPrincipal.html' %}
+	{% endblock %}
+</div>
+{% endblock %}
+
+{% block colunaDireita %}
+{% include 'multicadeiras/colunaDireita.html' %}
+{% endblock %}
+
+{% block footer %}
+{% include 'multicadeiras/footer.html' %}
+{% endblock %}

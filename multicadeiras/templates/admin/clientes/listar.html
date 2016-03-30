@@ -1,0 +1,25 @@
+{% extends 'admin/index.html' %}
+{% block colunaPrincipal %}
+<h1>Cadastro de Clientes</h1>
+<form action="/admin/clientes/cadastro" method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" />
+</form>
+
+<h1>Clientes Cadastrados</h1>
+
+{% for cat in categorias %}
+	<h3>{{ cat.nome }}</h3>
+	{% for cliente in clientes %}
+		{% if cliente.categoria.id == cat.id %}
+			{% if not cliente.website %}
+				<p>{{ cliente.nome }} <a href="/admin/clientes/remover/{{ cliente.id }}" onclick="return confirm('Tem certeza que deseja remover?');"><button type="button">Excluir</button></a></p>
+				{% else %}
+				<p><a href="{{ cliente.website }}" >{{ cliente.nome }}</a> <a href="/admin/clientes/remover/{{ cliente.id }}" onclick="return confirm('Tem certeza que deseja remover?');"><button type="button">Excluir</button></a></p>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+{% endfor %}
+
+{% endblock %}

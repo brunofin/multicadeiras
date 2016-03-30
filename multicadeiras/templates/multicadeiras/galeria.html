@@ -1,0 +1,16 @@
+{% extends 'multicadeiras/index.html' %}
+
+{% load staticfiles %}
+
+{% block conteudo %}
+<link href="{% static "css/lightbox.css" %}" rel="stylesheet" />
+<script src="{% static "js/jquery-1-7-1.min.js" %}"></script>
+<script src="{% static "js/lightbox-2.6.min.js" %}"></script>
+
+<h3>Galeria de fotos</h3><br>
+
+{% for foto in galeria %}
+	{% include 'multicadeiras/galeriaThumb.html' with foto=foto %}
+{% endfor %}
+
+{% endblock %}

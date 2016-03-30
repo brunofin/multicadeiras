@@ -1,0 +1,62 @@
+{% load staticfiles %}
+
+<div class="bloco">
+<label id="titulo">Financiamento</label>
+<div id="conteudo" style="text-align: center;" >
+
+<a style="color: inherit;" href="https://www.cartaobndes.gov.br/cartaobndes/PaginasCartao/Simulador_PopUp.asp?Acao=S1">
+<img src="{% static "imagens/bnds.png" %}" alt="Cartão BNDES" />
+<span>Clique aqui e calcule seu financiamento via CARTÃO BNDES</span></a>
+</div>
+</div>
+
+<div class="bloco">
+<label id="titulo">Produtos</label>
+<div id="conteudo">
+<ul class="menuEsquerda">
+{% for item in ordem %}
+	{% for categoria in cat %}
+		{% if categoria.id == item %}
+			<li>{{ categoria.nome }}</li>
+			<ul>
+			{% for subcategoria in subcat %}
+				{% if subcategoria.categoria.id == categoria.id %}
+					<li><a class="menulink" href="/subcategoria/{{ subcategoria.id }}">{{ subcategoria.nome }}</a></li>
+				{% endif %}
+			{% endfor %}
+			</ul>
+		{% endif %}
+	{% endfor %}
+{% endfor %}
+
+<!-- 
+<li>Madeira Premium</li>
+<ul></ul>
+<li>Madeira</li>
+	<ul>
+		<li>Cadeiras</li>
+		<li>Mesas</li>
+		<li>Poltronas</li>
+		<li>Bancos</li>
+		<li>Acabamentos</li>
+	</ul>
+<li>Aço, Carbono e Alumínio</li>
+	<ul>
+		<li>Cadeiras</li>
+		<li>Mesas</li>
+		<li>Bancos</li>
+		<li>Diversos</li>
+	</ul>
+<li>Área Externa</li>
+	<ul>
+		<li>Alumínio Color</li>
+		<li>Alumínio Fresh</li>
+		<li>Alumínio Casual</li>
+		<li>Alumínio Verano</li>
+		<li>Alumínio Areah</li>
+		<li>Alumínio Solaris</li>
+	</ul>
+</ul>
+ -->
+</div>
+</div>

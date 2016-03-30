@@ -1,0 +1,12 @@
+{% extends 'admin/index.html' %}
+
+{% block colunaPrincipal %}
+
+<h1>Cadastro de Categoria</h1>
+<form action="." method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" />
+</form>
+
+{% endblock %}

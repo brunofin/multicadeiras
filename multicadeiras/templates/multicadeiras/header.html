@@ -1,0 +1,50 @@
+{% load staticfiles %}
+
+<div class="header">
+<div id="preHeader">
+
+<div id="logo">
+<a href="/">
+<img src="{% static "imagens/logo.gif" %}" />
+</a>
+</div>
+
+<div class="mensagemHeader" >
+<p>Atendimento e entrega para todo o Brasil</p>
+<p>Fone: (48) 3223-7668</p>
+</div>
+
+<div id="emblemas">
+<!-- <img src="{% static "imagens/bnds.png" %}" /> -->
+<img src="{% static "imagens/abrasel.png" %}" />
+
+</div>
+
+<div id="social" >
+<div class="fb-like" data-href="http://www.multicadeiras.com.br" data-width="450" data-show-faces="false" data-send="false"></div>
+<div id="gplus" ><g:plusone href="http://www.multicadeiras.com.br"></g:plusone></div>
+<div id="twitter">
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.multicadeiras.com.br" data-lang="pt">Tweetar</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</div>
+</div>
+
+</div>
+
+<div class="menu">
+{% include 'multicadeiras/produto/menu.html' %}
+</div>
+
+{% if slideativo == True %}
+<style>
+	div#header {
+		height: 510px;
+	}
+</style>
+
+<div id="slideshowContainer">
+{% include 'multicadeiras/slideshow.html' %}
+</div>
+
+{% endif %}
+</div>

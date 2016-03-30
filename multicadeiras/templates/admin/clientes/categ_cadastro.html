@@ -1,0 +1,18 @@
+{% extends 'admin/index.html' %}
+
+{% block colunaPrincipal %}
+<h2>Adicionar Categoria de Clientes</h2>
+<p style="font-style: italic;" >Como por exemplo "Bares e Restaurantes"</p>
+<form action="/admin/clientes/categorias/cadastro" method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" />
+</form>
+
+<h2>Categorias de Clientes Cadastradas</h2>
+
+{% for cat in categorias %}
+	<p>{{ cat.nome }} <a href="/admin/clientes/categorias/remover/{{ cat.id }}" onclick="return confirm('Tem certeza que deseja remover?');"><button type="button">Excluir</button></a></p>
+{% endfor %}
+
+{% endblock %}

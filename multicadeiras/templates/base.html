@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>{% block pagetitle %}Multicadeiras{% endblock %}</title>
+		{% block meta %}
+			{% include 'base/meta.html' %}
+		{% endblock %}
+		
+		{% block css %}
+			{% include 'base/css.html' %}
+		{% endblock %}
+		
+		{% block head_outros %}
+			{% include 'base/head_outros.html' %}
+		{% endblock %}
+		
+		{% block google-analytics %}
+			{% include 'google-analytics' %}
+		{% endblock %}
+	</head>
+	<body>
+		<div id="principal">
+			<div id="header">
+				{% block header %}
+					{% include 'base/header.html' %}
+				{% endblock %}
+			</div>
+			<div id="corpo">
+				<div id="colunaEsquerda">
+					{% block colunaEsquerda %}
+						{% include 'base/colunaEsquerda.html' %}
+					{% endblock %}
+				</div>
+				<div id="colunaPrincipal">
+					{% block colunaPrincipal %}
+						{% include 'base/colunaPrincipal.html' %}
+					{% endblock %}
+				</div>
+				<div id="colunaDireita">
+					{% block colunaDireita %}
+						{% include 'base/colunaDireita.html' %}
+					{% endblock %}
+				</div>
+			</div>
+			<div id="footer">
+				{% block footer %}
+					{% include 'base/footer.html' %}
+				{% endblock %}
+			</div>
+		</div>
+	</body>
+</html>
